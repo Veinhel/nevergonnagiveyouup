@@ -83,6 +83,8 @@ do
         Folder:AddLabel({text = "======================"})
         Folder:AddLabel({text = "UnPatched by Veinhel"})
         Folder:AddLabel({text = "======================"})
+        Folder:AddLabel({text = "Fatitious is sus"})
+        Folder:AddLabel({text = "======================"})
 
         Window:AddBind({text = "Menu toggle", key = Enum.KeyCode.Delete, callback = function() Library:Close() end })
         Window:AddButton({text = "Instant Solo", callback = function()
