@@ -48,7 +48,7 @@ RunService.Heartbeat:Connect(function()
 
             local IsHell = Object:FindFirstChild("HellNote") and Object:FindFirstChild("HellNote").Value
 
-            if Difference <= 40 and not IsHell then
+            if Difference <= 60 and Difference >= 10 and not IsHell then
                 Marked[#Marked + 1] = Object
 
                 InputManager:SendKeyEvent(true, Enum.KeyCode[Keybind], false, nil)
@@ -84,6 +84,8 @@ do
         Folder:AddLabel({text = "UnPatched by Veinhel"})
         Folder:AddLabel({text = "======================"})
         Folder:AddLabel({text = "Fatitious is sus"})
+        Folder:AddLabel({text = "======================"})
+        Folder:AddLabel({text = "4k version"})
         Folder:AddLabel({text = "======================"})
 
         Window:AddBind({text = "Menu toggle", key = Enum.KeyCode.Delete, callback = function() Library:Close() end })
