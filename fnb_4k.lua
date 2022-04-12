@@ -94,9 +94,9 @@ do
                 PlayerGui.SingleplayerUI.ButtonPressed:FireServer()
             end)
         end})
-        Window:AddButton({text = "100 scroll speed(laggy)", callback = function()
+        Window:AddButton({text = "best scroll speed for bot", callback = function()
             pcall(function()
-                game:GetService("ReplicatedStorage").Events.RemoteEvent:FireServer("Input", 100, "ScrollSpeed")
+                game:GetService("ReplicatedStorage").Events.RemoteEvent:FireServer("Input", 1.6, "ScrollSpeed")
             end)
         end})
     end
