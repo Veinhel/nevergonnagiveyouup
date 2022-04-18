@@ -74,7 +74,7 @@ end
 do
     local Window = Library:CreateWindow("Friday Night Bloxxin'") do
         local Folder = Window:AddFolder("Autoplayer") do
-            local toggle = Folder:AddToggle({text = "AutoPlayer", flag = "AutoPlayer" })
+            local Toggle = Folder:AddToggle({text = "AutoPlayer", flag = "AutoPlayer" })
         end
 
         Folder:AddLabel({text = "======================"})
@@ -94,7 +94,6 @@ do
                 PlayerGui.SingleplayerUI.ButtonPressed:FireServer()
             end)
         end})
-        Window:AddBind({text = "solo doer", key = Enum.KeyCode.Insert, callback = function() PlayerGui.SingleplayerUI.ButtonPressed:FireServer() end })
         Window:AddButton({text = "best scroll speed for bot", callback = function()
             pcall(function()
                 game:GetService("ReplicatedStorage").Events.RemoteEvent:FireServer("Input", 1.6, "ScrollSpeed")
