@@ -94,6 +94,8 @@ do
                 PlayerGui.SingleplayerUI.ButtonPressed:FireServer()
             end)
         end})
+        Window:AddBind({text = "Instant solo with", key = Enum.KeyCode.Insert, callback = function() PlayerGui.SingleplayerUI.ButtonPressed:FireServer() end })
+        Window:AddLabel({text = "menu toggled bind"})
         Window:AddButton({text = "best scroll speed for bot", callback = function()
             pcall(function()
                 game:GetService("ReplicatedStorage").Events.RemoteEvent:FireServer("Input", 1.6, "ScrollSpeed")
