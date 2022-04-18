@@ -47,7 +47,6 @@ RunService.Heartbeat:Connect(function()
             local Difference = not InputFolder.Downscroll.Value and (Current - Start) or (Start - Current)
 
             local IsHell = Object:FindFirstChild("HellNote") and Object:FindFirstChild("HellNote").Value
-            IsHell:Destroy()
 
             if Difference <= 40 and not IsHell then
                 table.insert(Marked, Object)
