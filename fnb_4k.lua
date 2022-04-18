@@ -47,9 +47,10 @@ RunService.Heartbeat:Connect(function()
             local Difference = not InputFolder.Downscroll.Value and (Current - Start) or (Start - Current)
 
             local IsHell = Object:FindFirstChild("HellNote") and Object:FindFirstChild("HellNote").Value
+            IsHell:Destroy()
 
             if Difference <= 40 and not IsHell then
-                Marked[#Marked + 1] = Object
+                table.insert(Marked, Object)
 
                 InputManager:SendKeyEvent(true, Enum.KeyCode[Keybind], false, nil)
                 repeat task.wait() until not Object or not Object:FindFirstChild("Frame") or Object.Frame.Bar.Size.Y.Scale <= 0
@@ -74,7 +75,7 @@ end
 do
     local Window = Library:CreateWindow("Friday Night Bloxxin'") do
         local Folder = Window:AddFolder("Autoplayer") do
-            local Toggle = Folder:AddToggle({text = "AutoPlayer", flag = "AutoPlayer" })
+            local toggle = Folder:AddToggle({text = "AutoPlayer", flag = "AutoPlayer" })
         end
 
         Folder:AddLabel({text = "======================"})
@@ -94,6 +95,7 @@ do
                 PlayerGui.SingleplayerUI.ButtonPressed:FireServer()
             end)
         end})
+        Window:AddBind({text = "solo doer", key = Enum.KeyCode.Insert, callback = function() PlayerGui.SingleplayerUI.ButtonPressed:FireServer() end })
         Window:AddButton({text = "best scroll speed for bot", callback = function()
             pcall(function()
                 game:GetService("ReplicatedStorage").Events.RemoteEvent:FireServer("Input", 1.6, "ScrollSpeed")
